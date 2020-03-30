@@ -58,8 +58,21 @@ public class BallController : MonoBehaviour
         {
             Point = Point + 2;
         }
-        Debug.Log(Point);
-        this.PointText.GetComponent<Text>().text = Point.ToString();
+        //小さい雲に当たった場合
+        if (other.gameObject.tag == "SmallCloudTag")
+        {
+            Point = Point +2;
+        }
+
+        if (other.gameObject.tag == "LargeCloudTag")
+        {
+            Point = Point +3;
+        }
+
+     Debug.Log(Point);
+     this.PointText.GetComponent<Text>().text = Point.ToString();
+
+
     }
 
 
